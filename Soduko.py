@@ -1,4 +1,4 @@
-
+#Unsolved soduko board
 board = [
     [6,3,0,0,1,0,0,0,0],
     [7,0,0,0,9,0,0,0,0],
@@ -11,9 +11,9 @@ board = [
     [9,5,0,0,0,0,0,0,0]
 ]
 
-
+#Backtracking
 def solve(bo):
-    
+
     find = find_empty(bo)
     if not find:
         return True
@@ -53,7 +53,7 @@ def valid (bo, num, pos):
             
     return True 
 
-
+#Create the typical soduko borders
 def print_board(bo):
     for i in range(len(bo)):
         if i % 3 == 0 and i != 0:
@@ -68,6 +68,7 @@ def print_board(bo):
             else:
                 print(str(bo[i][j]) + " ", end="")
 
+#find the first 0 in the array
 def find_empty(bo):
     for i in range(len(bo)):
         for j in range(len(bo[0])):
