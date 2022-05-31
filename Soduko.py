@@ -31,7 +31,7 @@ def solve(bo):
             
     return False 
 
-
+#Ask if number is valid
 def valid (bo, num, pos):
     
     for i in range(len(bo[0])):
