@@ -6,6 +6,9 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
+
+# Initialize pygame
+pygame.init()
  
 # This sets the WIDTH and HEIGHT of each grid location
 WIDTH = 23
@@ -14,24 +17,14 @@ HEIGHT = 23
 # This sets the margin between each cell
 MARGIN = 5
  
-# Create a 2 dimensional array. A two dimensional
-# array is simply a list of lists.
+# Create a 2 dimensional array.
 grid = []
 for row in range(10):
-    # Add an empty array that will hold each cell
-    # in this row
     grid.append([])
     for column in range(10):
-        grid[row].append(0)  # Append a cell
+        grid[row].append(0) 
  
-# Set row 1, cell 5 to one. (Remember rows and
-# column numbers start at zero.)
-#grid[1][5] = 1
- 
-# Initialize pygame
-pygame.init()
- 
-# Set the HEIGHT and WIDTH of the screen
+# Set the HEIGHT and WIDTH
 WINDOW_SIZE = [255, 255]
 screen = pygame.display.set_mode(WINDOW_SIZE)
  
@@ -44,7 +37,7 @@ done = False
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
  
-# -------- Main Program Loop -----------
+# Game Loop
 while not done:
     for event in pygame.event.get():  # User did something
         if event.type == pygame.QUIT:  # If user clicked close
@@ -81,10 +74,7 @@ while not done:
  
     # Limit to 60 frames per second
     clock.tick(60)
- 
-    # Go ahead and update the screen with what we've drawn.
+
     pygame.display.flip()
- 
-# Be IDLE friendly. If you forget this line, the program will 'hang'
-# on exit.
+	
 pygame.quit()
